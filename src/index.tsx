@@ -25,14 +25,14 @@ export const Paginate = (props: PaginateProps) => {
   const numberOfPages = Math.ceil(count / pageSize);
 
   const handlePageClick = (i: number) => {
+    let newPage = i;
     if (i >= numberOfPages - 1) {
-      setPage(numberOfPages - 1);
+      newPage = numberOfPages - 1;
     } else if (i <= 0) {
-      setPage(0);
-    } else {
-      setPage(i);
+      newPage = 0;
     }
-    onClick(page);
+    onClick(newPage);
+    setPage(newPage);
   };
 
   const shouldRender = (idx: number) =>

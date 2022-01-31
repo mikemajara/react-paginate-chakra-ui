@@ -9,19 +9,20 @@ import "focus-visible/dist/focus-visible";
 
 const App = () => {
   const [page, setPage] = useState(0);
+  const handlePageClick = (p: number) => setPage(p);
 
   return (
     <Providers>
       <chakra.div>Page: {page}</chakra.div>
       <Paginate
-        margin={3}
+        margin={0}
         size="sm"
         fontWeight="regular"
         variant="ghost"
         selectedVariant="outline"
         count={100}
         pageSize={10}
-        onClick={(page: number) => setPage(page)}
+        onClick={handlePageClick}
       />
     </Providers>
   );
