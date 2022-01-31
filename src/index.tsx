@@ -54,7 +54,10 @@ export const Paginate = (props: PaginateProps) => {
           variant={variant}
           aria-label="previous"
           icon={previousIcon}
-          onClick={() => handlePageClick(page - 1)}
+          onClick={e => {
+            e.preventDefault();
+            handlePageClick(page - 1);
+          }}
           colorScheme={colorScheme}
         />
         {Array(numberOfPages)
@@ -68,7 +71,10 @@ export const Paginate = (props: PaginateProps) => {
                 borderRadius={borderRadius}
                 size={size}
                 variant={page == i ? selectedVariant : variant}
-                onClick={() => handlePageClick(i)}
+                onClick={e => {
+                  e.preventDefault();
+                  handlePageClick(i);
+                }}
                 colorScheme={colorScheme}
               >
                 {i + 1}
@@ -96,7 +102,10 @@ export const Paginate = (props: PaginateProps) => {
           borderRadius={borderRadius}
           aria-label="next"
           icon={nextIcon}
-          onClick={() => handlePageClick(page + 1)}
+          onClick={e => {
+            e.preventDefault();
+            handlePageClick(page + 1);
+          }}
           size={size}
           variant={variant}
           colorScheme={colorScheme}
