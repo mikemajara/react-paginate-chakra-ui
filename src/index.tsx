@@ -45,7 +45,6 @@ export const Paginate = (props: PaginateProps) => {
 
   return (
     <Stack p={5}>
-      <div>internal: {page}</div>
       <HStack>
         <IconButton
           {...rest}
