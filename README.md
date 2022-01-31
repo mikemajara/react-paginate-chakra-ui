@@ -6,6 +6,18 @@ Both rc-paginate and react-paginate render `ul` components. I tend to use Chakra
 
 This is a very simple, opinionated component, that will allow you to setup a pagination component in no time and give it Chakra-UI like style.
 
+## Install
+
+🚧 Package under construction, it's not yet published on npm, so you'll have to install as follows
+
+```
+npm install https://github.com/mikemajara/react-paginate-chakra-ui
+```
+
+```
+yarn add https://github.com/mikemajara/react-paginate-chakra-ui
+```
+
 ## Usage
 
 ```
