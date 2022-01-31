@@ -2,36 +2,46 @@
 
 ## Motivation
 
-Both rc-paginate and react-paginate render `ul` components. I tend to use Chakra-UI these days and I prefer their structure.
+Both [rc-pagination](https://github.com/react-component/pagination) and [react-paginate](https://github.com/AdeleD/react-paginate) are (1) overly complex and have too many options and (2) render `<ul>` & `<li>` components. I tend to use Chakra-UI lately and I prefer their **simple and opinionated** approach to structuring and styling an app. 
 
-This is a very simple, opinionated component, that will allow you to setup a pagination component in no time and give it Chakra-UI like style.
+This is a very simple, opinionated component, that will allow you to setup a pagination component in no time and, including Chakra-UI like styles (size, colorScheme, etc)
 
 ## Install
 
 🚧 Package under construction, it's not yet published on npm, so you'll have to install as follows
 
 ```
-npm install https://github.com/mikemajara/react-paginate-chakra-ui
+npm install react-paginate-chakra-ui
 ```
 
 ```
-yarn add https://github.com/mikemajara/react-paginate-chakra-ui
+yarn add react-paginate-chakra-ui
 ```
 
 ## Usage
 
 ```jsx
-<Paginate
-  page={page}
-  margin={0}
-  size="sm"
-  fontWeight="regular"
-  variant="ghost"
-  selectedVariant="outline"
-  count={100}
-  pageSize={10}
-  onClick={handlePageClick}
-/>
+const MyComponent = () => {
+  const [page, setPage] = useState(0);
+  const handlePageClick = (p: number) => setPage(p);
+
+  return (
+    <Providers>
+      <Paginate
+        page={page}
+        margin={1}
+        shadow="sm"
+        fontWeight="bold"
+        variant="outline"
+        selectedVariant="solid"
+        count={100}
+        pageSize={10}
+        onPageChange={handlePageClick}
+      />
+    </Providers>
+  );
+};
+
 ```
 
 ## Examples
@@ -60,3 +70,18 @@ yarn add https://github.com/mikemajara/react-paginate-chakra-ui
 | colorScheme     	| gray                 	| no       	|
 | fontWeight      	| regular              	| no       	|
 | borderRadius    	| md                   	| no       	|
+
+
+## Roadmap
+- [ ] Add styles for selected component
+  - [x] size
+  - [x] colorScheme
+  - [x] variant
+  - [x] fontWeight
+  - [ ] spacing
+- [ ] Include variants for paging display
+  - [x] Display +-N pages relative to current
+  - [ ] Only display 1 page
+  - [ ] Keep fixed number of tiles
+- [ ] Improve typing
+- [ ] Add tests
