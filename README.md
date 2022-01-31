@@ -8,8 +8,6 @@ This is a very simple, opinionated component, that will allow you to setup a pag
 
 ## Install
 
-🚧 Package under construction, it's not yet published on npm, so you'll have to install as follows
-
 ```
 npm install react-paginate-chakra-ui
 ```
