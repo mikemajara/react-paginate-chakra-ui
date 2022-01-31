@@ -8,8 +8,9 @@ export const Paginate = (props: PaginateProps) => {
   const {
     count,
     pageSize,
-    margin = 1,
+    page,
     onClick,
+    margin = 1,
     size = "md",
     selectedVariant = "solid",
     variant = "outline",
@@ -21,7 +22,6 @@ export const Paginate = (props: PaginateProps) => {
     ...rest
   } = props;
 
-  const [page, setPage] = React.useState<number>(0);
   const numberOfPages = Math.ceil(count / pageSize);
 
   const handlePageClick = (i: number) => {
@@ -32,7 +32,6 @@ export const Paginate = (props: PaginateProps) => {
       newPage = 0;
     }
     onClick(newPage);
-    setPage(newPage);
   };
 
   const shouldRender = (idx: number) =>

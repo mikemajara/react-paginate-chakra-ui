@@ -15,6 +15,7 @@ const App = () => {
     <Providers>
       <chakra.div>Page: {page}</chakra.div>
       <Paginate
+        page={page}
         margin={0}
         size="sm"
         fontWeight="regular"

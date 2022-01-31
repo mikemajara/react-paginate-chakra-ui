@@ -1,4 +1,5 @@
 export interface PaginateProps {
+  page: number;
   count: number;
   pageSize: number;
   margin?: number;
