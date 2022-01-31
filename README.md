@@ -19,38 +19,50 @@ yarn add react-paginate-chakra-ui
 ## Usage
 
 ```jsx
-const MyComponent = () => {
-  const [page, setPage] = useState(0);
+// index.tsx
+import { chakra, ChakraProvider, Stack } from "@chakra-ui/react";
+import * as React from "react";
+import { render } from "react-dom";
+import { Paginate } from "react-paginate-chakra-ui";
+import "focus-visible";
+import "./styles.css";
+
+function App() {
+  const [page, setPage] = React.useState(0);
   const handlePageClick = (p: number) => setPage(p);
 
   return (
-    <Providers>
+    <Stack p={5}>
+      <chakra.div>Page: {page}</chakra.div>
       <Paginate
+        // required props 👇
         page={page}
-        margin={1}
-        shadow="sm"
-        fontWeight="bold"
-        variant="outline"
-        selectedVariant="solid"
         count={100}
         pageSize={10}
         onPageChange={handlePageClick}
+        // optional props 👇
+        margin={2}
+        shadow="lg"
+        fontWeight="blue"
+        variant="outline"
+        // ...border and other props also work 💪
+        border="2px solid"
+        // you can use w to adjust to parent
+        // container
+        w="full"
       />
-    </Providers>
+    </Stack>
   );
-};
+}
 
+const rootElement = document.getElementById("root");
+render(
+  <ChakraProvider>
+    <App />
+  </ChakraProvider>,
+  rootElement
+);
 ```
-
-## Examples
-
-![snapshot1](/images/Screenshot%202022-01-31%20at%2020.23.12.png)
-![snapshot2](/images/Screenshot%202022-01-31%20at%2020.25.29.png)
-![snapshot3](/images/Screenshot%202022-01-31%20at%2020.25.58.png)
-![snapshot4](/images/Screenshot%202022-01-31%20at%2020.27.00.png)
-![snapshot5](/images/Screenshot%202022-01-31%20at%2020.27.50.png)
-![snapshot6](/images/Screenshot%202022-01-31%20at%2020.28.39.png)
-![snapshot7](/images/Screenshot%202022-01-31%20at%2020.29.29.png)
 
 ## Props
 
@@ -69,6 +81,16 @@ const MyComponent = () => {
 | fontWeight      	| regular              	| no       	|
 | borderRadius    	| md                   	| no       	|
 
+## Codesandbox
+## Examples
+
+![snapshot1](/images/Screenshot%202022-01-31%20at%2020.23.12.png)
+![snapshot2](/images/Screenshot%202022-01-31%20at%2020.25.29.png)
+![snapshot3](/images/Screenshot%202022-01-31%20at%2020.25.58.png)
+![snapshot4](/images/Screenshot%202022-01-31%20at%2020.27.00.png)
+![snapshot5](/images/Screenshot%202022-01-31%20at%2020.27.50.png)
+![snapshot6](/images/Screenshot%202022-01-31%20at%2020.28.39.png)
+![snapshot7](/images/Screenshot%202022-01-31%20at%2020.29.29.png)
 
 ## Roadmap
 - [ ] Add styles for selected component
