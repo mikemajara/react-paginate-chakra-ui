@@ -20,7 +20,7 @@ yarn add https://github.com/mikemajara/react-paginate-chakra-ui
 
 ## Usage
 
-```
+```jsx
 <Paginate
   page={page}
   margin={0}
