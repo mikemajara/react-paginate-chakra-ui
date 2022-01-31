@@ -3,7 +3,7 @@ export interface PaginateProps {
   count: number;
   pageSize: number;
   margin?: number;
-  onClick: (page: number) => any;
+  onPageChange: (page: number) => any;
   size?: "xs" | "sm" | "md" | "lg";
   variant?: "solid" | "ghost" | "outline" | "link";
   selectedVariant?: "solid" | "ghost" | "outline" | "link";

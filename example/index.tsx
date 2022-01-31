@@ -13,17 +13,16 @@ const App = () => {
 
   return (
     <Providers>
-      <chakra.div>Page: {page}</chakra.div>
       <Paginate
         page={page}
-        margin={3}
+        margin={1}
         shadow="sm"
         fontWeight="bold"
         variant="outline"
         selectedVariant="solid"
         count={100}
         pageSize={10}
-        onClick={handlePageClick}
+        onPageChange={handlePageClick}
       />
     </Providers>
   );

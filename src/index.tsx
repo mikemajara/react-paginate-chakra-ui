@@ -9,7 +9,7 @@ export const Paginate = (props: PaginateProps) => {
     count,
     pageSize,
     page,
-    onClick,
+    onPageChange,
     margin = 1,
     size = "md",
     selectedVariant = "solid",
@@ -31,7 +31,7 @@ export const Paginate = (props: PaginateProps) => {
     } else if (i <= 0) {
       newPage = 0;
     }
-    onClick(newPage);
+    onPageChange(newPage);
   };
 
   const shouldRender = (idx: number) =>
@@ -45,6 +45,7 @@ export const Paginate = (props: PaginateProps) => {
 
   return (
     <Stack p={5}>
+      <div>internal: {page}</div>
       <HStack>
         <IconButton
           {...rest}
