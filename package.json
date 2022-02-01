@@ -19,6 +19,9 @@
     "size": "size-limit",
     "analyze": "size-limit --why"
   },
+  "publishConfig": {
+    "registry":"https://npm.pkg.github.com"
+  },
   "peerDependencies": {
     "@chakra-ui/react": "^1.7.1",
     "@emotion/react": "^11",
