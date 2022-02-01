@@ -82,6 +82,9 @@ render(
 | borderRadius    	| md                   	| no       	|
 
 ## Codesandbox
+
+https://codesandbox.io/s/react-paginate-chakra-ui-u18df
+
 ## Examples
 
 ![snapshot1](/images/Screenshot%202022-01-31%20at%2020.23.12.png)
