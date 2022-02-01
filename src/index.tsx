@@ -17,7 +17,7 @@ export const Paginate = (props: PaginateProps) => {
     previousIcon = <ChevronLeftIcon />,
     nextIcon = <ChevronRightIcon />,
     colorScheme = "gray",
-    fontWeight = "regular",
+    fontWeight = "light",
     borderRadius = "md",
     ...rest
   } = props;
